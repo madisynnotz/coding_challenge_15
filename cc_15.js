@@ -37,3 +37,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 alert("Please fill out all fields.");
             }
         });
+
+        // Task 3: Removing Risk Items
+        // Add event listener to remove the risk card when "Resolve" is clicked
+        riskCard.querySelector(".resolveBtn").addEventListener("click", function (event) {
+            event.stopPropagation(); // Prevent event bubbling issues
+            riskDashboard.removeChild(riskCard); // Remove the risk card
+        });
+
+        // Append the new risk card to the dashboard
+        riskDashboard.appendChild(riskCard);
+    }
