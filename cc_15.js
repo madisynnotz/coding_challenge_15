@@ -1,4 +1,4 @@
-//Task 2: Adding Risk Items Dynamically
+//Task 1 : Basic set up
 // Wait for the page to fully load before running any JavaScript
 document.addEventListener("DOMContentLoaded", function () {
     console.log("Risk Dashboard Loaded");
@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const riskForm = document.getElementById("riskForm");
     const increaseRiskBtn = document.getElementById("increaseRiskBtn");
 
+    //Task 2 - Adding Risk Items
     // Function to add a new risk card to the dashboard
     function addRiskItem(riskName, riskLevel, department) {
         let riskCard = document.createElement("div");
@@ -20,3 +21,19 @@ document.addEventListener("DOMContentLoaded", function () {
             <strong>Department:</strong> ${department} <br>
             <button class="resolveBtn">Resolve</button>
         `;
+        riskForm.addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent page refresh on form submission
+    
+            // Get user inputs
+            const riskName = document.getElementById("riskName").value.trim();
+            const riskLevel = document.getElementById("riskLevel").value;
+            const department = document.getElementById("department").value.trim();
+    
+            // Check if all fields are filled before adding the risk
+            if (riskName && department) {
+                addRiskItem(riskName, riskLevel, department);
+                riskForm.reset(); // Clear form fields
+            } else {
+                alert("Please fill out all fields.");
+            }
+        });
