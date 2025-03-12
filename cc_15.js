@@ -71,3 +71,10 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     });
+
+    // ✅ Task 6: Handling Event Propagation
+    // Prevent unintended clicks on the dashboard from affecting risk cards
+    riskDashboard.addEventListener("click", function (event) {
+        console.log("Dashboard clicked"); // This should only fire if the dashboard is clicked directly
+    });
+});
