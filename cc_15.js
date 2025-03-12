@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // ✅ Task 5: Implementing Bulk Updates
+    // Task 5: Implementing Bulk Updates
     // Function to increase risk levels across all risks
     increaseRiskBtn.addEventListener("click", function () {
         document.querySelectorAll(".riskCard").forEach((card) => {
